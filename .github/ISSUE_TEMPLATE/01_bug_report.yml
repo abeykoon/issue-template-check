@@ -13,19 +13,19 @@ body:
       label: Related Area
       description: Choose the area in Choreo you are reporting the bug against
       options:
-       - Area/ManagingDevelopment ()
-       - Area/APIM (API Management)
-       - Area/Observability ()
-       - Area/AI (Tishan)
-       - Area/LowCode (Prabushi)
-       - Area/Connectors (HasithaH)
-       - Area/CodeReuse (ChalithaK)
-       - Area/Samples (HasithaH)
-       - Area/Insights (Tishan)
-       - Area/Auth (IsuruW)
-       - Area/Billing (IsuruW)
-       - Area/CodeServer (Tishan)
-       - Area/DocSite
+       - Area/ManagingDevelopment (Develop, deploy, test, component listing etc.)
+       - Area/APIM 
+       - Area/Observability 
+       - Area/AI 
+       - Area/LowCode 
+       - Area/Connectors 
+       - Area/CodeReuse (Publishing reusable connectors, triggers and other artifact to the marketplace)
+       - Area/Samples (Getting started samples)
+       - Area/Insights 
+       - Area/Auth 
+       - Area/Billing 
+       - Area/CodeServer 
+       - Area/DocSite 
        - Other (None Listed Above)
     validations:
       required: true
