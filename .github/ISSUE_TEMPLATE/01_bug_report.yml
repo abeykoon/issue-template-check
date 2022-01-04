@@ -35,9 +35,9 @@ body:
       label: Affected Version 
       description: Choose the environment you are reporting the bug against
       options:
-       - Development
-       - Staging 
-       - Production
+       - Env/Development
+       - Env/Staging 
+       - Env/Production
     validations:
       required: true
   - type: textarea
