@@ -9,11 +9,12 @@ jobs:
         with:
           script: |
             var body = context.payload.issue.body
-            var words = body.split(/\s+/g)
+            var words = body.split(/\s+/g);
             console.log(words)
             for (var i = 0; i < words.length - 1; i++) {
                 var word = words[i]
                 if(word.startsWith('Area/')) {
+                    var label = word
                     console.log(label)
                     github.issues.addLabels({
                     issue_number: context.issue.number,
@@ -27,6 +28,7 @@ jobs:
             for (var i = 0; i < words.length - 1; i++) {
                 var word = words[i]
                 if(word.startsWith('Env/')) {
+                    var label = word
                     console.log(label)
                     github.issues.addLabels({
                     issue_number: context.issue.number,
