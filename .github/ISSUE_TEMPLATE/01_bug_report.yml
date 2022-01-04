@@ -1,0 +1,68 @@
+name: 🐞 Bug Report 
+description: File a bug report
+title: "[Bug]: "
+labels: [Type/Bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: Related-area
+    attributes:
+      label: Related Area
+      description: Choose the area in Choreo you are reporting the bug against
+      options:
+       - Area/ManagingDevelopment ()
+       - Area/APIM (API Management)
+       - Area/Observability ()
+       - Area/AI (Tishan)
+       - Area/LowCode (Prabushi)
+       - Area/Connectors (HasithaH)
+       - Area/CodeReuse (ChalithaK)
+       - Area/Samples (HasithaH)
+       - Area/Insights (Tishan)
+       - Area/Auth (IsuruW)
+       - Area/Billing (IsuruW)
+       - Area/CodeServer (Tishan)
+       - Area/DocSite
+       - Other (None Listed Above)
+    validations:
+      required: true
+  - type: dropdown
+    id: Product-version
+    attributes:
+      label: Affected Version 
+      description: Choose the environment you are reporting the bug against
+      options:
+       - Development
+       - Staging 
+       - Production
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: Steps to reproduce 
+      description: Mention in point form, include images if required
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Suggested solution
+      description: If you already have a suggestion solution, please mention 
+
