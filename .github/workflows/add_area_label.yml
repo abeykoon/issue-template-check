@@ -13,7 +13,7 @@ jobs:
             console.log(words)
             for (var i = 0; i < words.length - 1; i++) {
                 var word = words[i]
-                if(word.startsWith('Area\n\nArea/')) {
+                if(word.startsWith('Area/')) {
                     var label = word.substring(4) 
                     console.log(label)
                     github.issues.addLabels({
