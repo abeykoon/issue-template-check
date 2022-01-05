@@ -1,0 +1,58 @@
+name: 💡 New Feature Request
+description: Create a new feature request
+title: "[Feature]: "
+labels: [Type/New Feature]
+body:
+  - type: dropdown
+    id: Related-area
+    attributes:
+      label: Related Area
+      description: Choose the area in Choreo you are reporting the bug against
+      options:
+       - Area/ManagingDevelopment (Develop, deploy, test, component listing etc.)
+       - Area/APIM 
+       - Area/Observability 
+       - Area/AI 
+       - Area/LowCode 
+       - Area/Connectors 
+       - Area/CodeReuse (Publishing reusable connectors, triggers and other artifact to the marketplace)
+       - Area/Samples (Getting started samples)
+       - Area/Insights 
+       - Area/Auth 
+       - Area/Billing 
+       - Area/CodeServer 
+       - Area/DocSite 
+       - Area/Other (None Listed Above)
+    validations:
+      required: true
+  - type: textarea
+    id: feature-request
+    attributes:
+      label: Suggested feature
+      description: Describe the feature you'd like
+      placeholder: A clear and concise description of what you want to happen. Include any alternative solutions you've considered.
+    validations:
+      required: true
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related issues
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: A clear and concise description of what the problem is.
+      value: "I am trying to do [...] but [...]"
+  - type: textarea
+    id: feature-scope
+    attributes:
+      label: Scope description
+      description: Specify what is opt out what is included
+  - type: textarea
+    id: feature-scope
+    attributes:
+      label: Scope description
+      description: Specify what is opt out what is included
+  - type: input
+    id: time-estimation
+    attributes:
+      label: Time estimate
+      description: Estimated developer effort (man days)
+

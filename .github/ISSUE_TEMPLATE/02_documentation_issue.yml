@@ -1,0 +1,44 @@
+name: 📖 Doc Issue/Improvement Report
+description: File a documentation issue/improvement 
+title: "[Docs]: "
+labels: [Type/Docs,Team/Education]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to improve our docs!
+  - type: dropdown
+    id: Related-area
+    attributes:
+      label: Related Area
+      description: Choose the area in Choreo you are reporting the bug against
+      options:
+       - Area/ManagingDevelopment (Develop, deploy, test, component listing etc.)
+       - Area/APIM 
+       - Area/Observability 
+       - Area/AI 
+       - Area/LowCode 
+       - Area/Connectors 
+       - Area/CodeReuse (Publishing reusable connectors, triggers and other artifact to the marketplace)
+       - Area/Samples (Getting started samples)
+       - Area/Insights 
+       - Area/Auth 
+       - Area/Billing 
+       - Area/CodeServer 
+       - Area/DocSite 
+       - Area/Other (None Listed Above)
+    validations:
+      required: true
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Documentation Issue/Improvement
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Relevant suggestions
+      description: If you are suggesting a text as the solution please specify below
+

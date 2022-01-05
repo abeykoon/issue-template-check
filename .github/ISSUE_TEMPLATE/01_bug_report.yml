@@ -26,7 +26,7 @@ body:
        - Area/Billing 
        - Area/CodeServer 
        - Area/DocSite 
-       - Other (None Listed Above)
+       - Area/Other (None Listed Above)
     validations:
       required: true
   - type: dropdown

@@ -1,0 +1,36 @@
+name: ✍️ New Task
+description: Create a new task
+title: "[Task]: "
+labels: [Type/Task]
+body:
+  - type: dropdown
+    id: Related-area
+    attributes:
+      label: Related Area
+      description: Choose the area in Choreo you are reporting the bug against
+      options:
+       - Area/ManagingDevelopment (Develop, deploy, test, component listing etc.)
+       - Area/APIM 
+       - Area/Observability 
+       - Area/AI 
+       - Area/LowCode 
+       - Area/Connectors 
+       - Area/CodeReuse (Publishing reusable connectors, triggers and other artifact to the marketplace)
+       - Area/Samples (Getting started samples)
+       - Area/Insights 
+       - Area/Auth 
+       - Area/Billing 
+       - Area/CodeServer 
+       - Area/DocSite 
+       - Area/Other (None Listed Above)
+    validations:
+      required: true
+  - type: textarea
+    id: task-description
+    attributes:
+      label: Task Description
+      description: Describe the task to be performed 
+      placeholder: A clear and concise description of what needs to be done. Specify a scope if relevant.
+    validations:
+      required: true
+
