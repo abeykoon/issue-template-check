@@ -1,4 +1,4 @@
-name: \U0001F6E0 R&D Budget Update Request
+name: 🛠 R&D Budget Update Request
 description: If you need to allocate budget for an R&D task
 title: "[Budget]: "
 labels: [Type/Task, Team/PlatformEng, SRE/Budgeting]
