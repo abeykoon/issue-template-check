@@ -16,7 +16,7 @@ Thanks for taking the time to fill out this bug report!
 <!--Area/AI  -->
 <!--Area/LowCode  -->
 <!--Area/Connectors  -->
-<!--Area/CodeReuse (Publishing reusable connectors, triggers and other artifact to the marketplace) -->
+<!--Area/CodeReuse (Publishing reusable connectors, triggers and other artefact to the marketplace) -->
 <!--Area/Samples (Getting started samples) -->
 <!--Area/Insights  -->
 <!--Area/Auth  -->
@@ -36,7 +36,7 @@ Thanks for taking the time to fill out this bug report!
 <!-- Also tell us, what did you expect to happen? -->
 
 ### Relevant log output
-<!-- Please copy and paste any relevant log output. Include backticks. -->
+<!-- Please copy and paste any relevant log output. Include back-ticks. -->
 
 ### Steps to reproduce 
 <!-- Mention in point form, include images if required. -->
