@@ -7,5 +7,10 @@ jobs:
     if: ${{ !contains(github.event.issue.labels.*.name, 'Resolution/Fixed') }}
     steps:
       - run: echo Resolution label is not set
-
-
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            This issue is NOT closed with a proper **Resolution label**. Make sure to add it before closing.
+            
