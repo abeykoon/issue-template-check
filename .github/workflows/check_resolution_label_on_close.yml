@@ -16,4 +16,5 @@ jobs:
       - name: Reopen issue
         run: gh issue reopen $ISSUE
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.number }}      
