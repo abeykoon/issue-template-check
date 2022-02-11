@@ -4,18 +4,17 @@ on:
 jobs:
   check-resolution-label:
     runs-on: ubuntu-latest
+    if: ${{ !(contains(github.event.issue.labels.*.name, 'Resolution/Fixed') || contains(github.event.issue.labels.*.name, 'Resolution/Invalid')) }}
     steps:
-      - run: echo '${{ toJSON(github) }}'
-      - uses: actions/github-script@v4
+      - run:  echo '${{ toJSON(github) }}'
+      - run:  echo Resolution label is not set $github.event
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
         with:
-          script: |
-            var labels = context.payload.issue.labels.*.name
-            console.log(labels);
-            for (var i = 0; i < labels.length; i++) {
-                var label = labels[i]
-                if(label.startsWith('Resolution/')) {
-                    console.log('resolution label found');
-                    break 
-                }
-            }
-              
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            This issue is NOT closed with a proper **Resolution label**. Make sure to add it before closing. Issue is reopened.
+      - run: gh issue reopen $ISSUE
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}    
