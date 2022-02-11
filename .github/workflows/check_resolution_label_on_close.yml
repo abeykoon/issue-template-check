@@ -12,9 +12,8 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            This issue is NOT closed with a proper **Resolution label**. Make sure to add it before closing.
-      - name: Reopen issue
-        run: gh issue reopen $ISSUE
+            This issue is NOT closed with a proper **Resolution label**. Make sure to add it before closing. Issue is reopened.
+      - run: gh issue reopen $ISSUE
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE: ${{ github.event.issue.number }}      
+          ISSUE: ${{ github.event.issue.html_url }}    
