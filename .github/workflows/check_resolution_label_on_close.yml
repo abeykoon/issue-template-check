@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.issue.labels.*.name, 'Resolution/Fixed') }}
     steps:
-      - run: echo Resolution label is not set
+      - run: status:echo Resolution label is not set $github.event.issue.labels.*.name
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
