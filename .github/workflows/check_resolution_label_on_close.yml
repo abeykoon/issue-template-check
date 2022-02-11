@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.issues.labels.*.name, 'Resolution/.*') }}
     steps:
-      - run: echo github.event.issues.labels.*.name
+      - run: echo ${github.event.issues.labels.*.name}
       - run: echo Resolution label is not set
 
 
