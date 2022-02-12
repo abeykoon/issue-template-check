@@ -4,7 +4,14 @@ on:
 jobs:
   check-resolution-label:
     runs-on: ubuntu-latest
-    if: ${{ !(contains(github.event.issue.labels.*.name, 'Resolution/Fixed') || contains(github.event.issue.labels.*.name, 'Resolution/Invalid')) }}
+    if: ${{ !(contains(github.event.issue.labels.*.name, 'Resolution/Fixed') || 
+          contains(github.event.issue.labels.*.name, 'Resolution/Duplicate')) ||
+          contains(github.event.issue.labels.*.name, 'Resolution/Postponed')) ||
+          contains(github.event.issue.labels.*.name, 'Resolution/Invalid')) ||
+          contains(github.event.issue.labels.*.name, 'Resolution/Moved')) ||
+          contains(github.event.issue.labels.*.name, 'Resolution/Cannot Reproduce')) ||
+          contains(github.event.issue.labels.*.name, 'Resolution/Won’t Fix')) ||
+          contains(github.event.issue.labels.*.name, 'Resolution/Not a bug')) ||}}
     steps:
       - run:  echo '${{ toJSON(github) }}'
       - run:  echo Resolution label is not set $github.event
