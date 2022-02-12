@@ -13,8 +13,7 @@ jobs:
           contains(github.event.issue.labels.*.name, 'Resolution/Won’t Fix') ||
           contains(github.event.issue.labels.*.name, 'Resolution/Not a bug')) }}
     steps:
-      - run:  echo '${{ toJSON(github) }}'
-      - run:  echo Resolution label is not set $github.event
+      - run:  echo Resolution label is not set 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
