@@ -14,12 +14,10 @@ jobs:
           contains(github.event.issue.labels.*.name, 'Resolution/Not a bug')) }}
     steps:
       - run:  echo Resolution label is not set 
-      - name: Create comment
-        uses: peter-evans/create-or-update-comment@v1
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            This issue is NOT closed with a proper **Resolution label**. Make sure to add it before closing. Issue is reopened.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}  
+      - run: gh issue comment $ISSUE --body "This issue is NOT closed with a proper **Resolution label**. Hence issue is reopened. Make sure to add proper resolution label before closing."
       - run: gh issue reopen $ISSUE
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
