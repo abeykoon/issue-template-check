@@ -4,14 +4,15 @@ on:
 jobs:
   check-resolution-label:
     runs-on: ubuntu-latest
-    if: ${{ !(contains(github.event.issue.labels.*.name, 'Resolution/Fixed') || 
-          contains(github.event.issue.labels.*.name, 'Resolution/Duplicate') ||
-          contains(github.event.issue.labels.*.name, 'Resolution/Postponed') ||
-          contains(github.event.issue.labels.*.name, 'Resolution/Invalid') ||
-          contains(github.event.issue.labels.*.name, 'Resolution/Moved') ||
-          contains(github.event.issue.labels.*.name, 'Resolution/Cannot Reproduce') ||
-          contains(github.event.issue.labels.*.name, 'Resolution/Won’t Fix') ||
-          contains(github.event.issue.labels.*.name, 'Resolution/Not a bug')) }}
+    if: ${{ !(contains(github.event.issue.labels.*.name, "Resolution/Fixed") || 
+          contains(github.event.issue.labels.*.name, "Resolution/Duplicate") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Postponed") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Invalid") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Moved") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Cannot Reproduce") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Won't Fix") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Won't Do") ||
+          contains(github.event.issue.labels.*.name, "Resolution/Not a bug")) }}
     steps:
       - run:  echo Resolution label is not set  
       - run: gh issue comment $ISSUE --body "This issue is NOT closed with a proper **Resolution label**. Hence issue is reopened. Make sure to add proper resolution label before closing."
